@@ -8,8 +8,14 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
         <Routes>
+            {/* not authenticated user routes */}
             <Route element={<Layout />}>
                 <Route path="/register" element={<UserRegisterForm />} />
+            </Route>
+
+            {/* authenticated user routes */}
+            <Route element={<Layout />}>
+                <Route path="/dashboard" element={<div>Dashboard</div>} />
             </Route>
         </Routes>
     </BrowserRouter>
